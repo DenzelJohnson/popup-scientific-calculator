@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Mini Popup Calculator",
+  "description": "A mini calculator popup in the bottom right corner of your browser tabs.",
+  "version": "1.0",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["calculator.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["calculator.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
